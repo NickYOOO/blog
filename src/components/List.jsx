@@ -8,38 +8,49 @@ function List() {
     const [likes, setLikes] = useState(0);
     const [modal, setModal] = useState(false);
 
+    {
+        title.map(function (a, i){
+        return (
+            <StList>
+                <div> {a} </div>
+                <p> {date} </p>
+            </StList>
+
+        )
+    } )
+    };
     return (
-        // <>
-        //     <StList>
-        //         <h4>{title[0]} <span onClick={() => { setLikes(likes + 1) }} style={{ cursor: 'pointer' }}>👍🏻</span> {좋아요}</h4>
-        //         <button onClick={() => {
-        //             const copy = [...title];
-        //             copy[1] = '카페 리스트';
-        //             setTitle(copy)
-        //         }}> 수정버튼 </button>
-        //         <p>2월 17일 발행</p>
-        //     </StList>
-        //     <StList>
-        //         <h4 onClick={() => { setModal(true) }}
-        //             style={{ cursor: 'pointer' }} >
-        //             {title[1]}</h4>
-        //         {
-        //             modal === true ? <Modal /> : null
-        //         }
-        //     </StList>
-            {title.map(function () {
-                return (
-                    <StList>
+        <>
+            {/* <StList>
+                <h4>{title[0]} <span onClick={() => { setLikes(likes + 1) }} style={{ cursor: 'pointer' }}>👍🏻</span> {likes}</h4>
+                <button onClick={() => {
+                    const copy = [...title];
+                    copy[1] = '카페 리스트';
+                    setTitle(copy)
+                }}> 수정버튼 </button>
+                <p>2월 17일 발행</p>
+            </StList>
+            <StList>
+                <h4 onClick={() => { setModal(true) }}
+                    style={{ cursor: 'pointer' }} >
+                    {title[1]}</h4>
+                {
+                    modal === true ? <Modal /> : null
+                }
+            </StList> */}
+              {
+        title.map(function (title, i){
+        return (
+            <StList>
+                <div> {title} </div>
+            </StList>
 
-                        <div> {title} </div>
-                        <p> {date} </p>
-                    </StList>
-
-                )
-            })}
-        // </>
-    )
-}
+        )
+    } )
+    };
+        </>
+    );
+};
 export default List;
 
 const StList = styled.div`
