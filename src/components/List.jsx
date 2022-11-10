@@ -1,14 +1,14 @@
 /*eslint-disable*/
 import { useState } from "react";
 import styled from "styled-components";
-
-import Modal from "./Modal";
+import Modal from "./Modal"
 
 function List() {
     const [title, setTitle] = useState(['버킷 리스트', '맛집 리스트', '노동요 리스트']);
     const [date, setDate] = useState(['02월 17일', '05월 17일', '01월 05일']);
     const [likes, setLikes] = useState([0, 0, 0]);
     const [modal, setModal] = useState(false);
+
 
     return (
         <>
@@ -43,6 +43,9 @@ function List() {
 
                     )
                 })
+            }
+            {
+                modal == true ? <Modal setTitle={setTitle} title={title}/> : null
             }
         </>
     );

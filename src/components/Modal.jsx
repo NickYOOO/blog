@@ -7,6 +7,9 @@ function Modal(props) {
             <h4>{ props.title[0] }</h4>
             <p>날짜</p>
             <p>상세내용</p>
+            <button onClick={() => {
+                    props.setTitle()
+                }}> 글수정 </button>
         </StModal>
     )
 }
